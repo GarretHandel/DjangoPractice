@@ -19,7 +19,10 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         """Return the last five published questions that have at least one choice."""
         #TODO add filter for choices
-        return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
+        hasChoices = True
+        for q in Question.objects.all():
+            hasChoices = hasChoices and q.choice_set.count > 0
+        return Question.objects.filter(pub_date__lte=timezone.now() and hasChoices).order_by('-pub_date')[:5]
 
 class DetailView(generic.DetailView):
     model = Question
