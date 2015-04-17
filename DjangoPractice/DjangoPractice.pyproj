@@ -42,6 +42,9 @@
     </Compile>
     <Compile Include="polls\models.py" />
     <Compile Include="polls\tests.py" />
+    <Compile Include="polls\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="polls\views.py" />
     <Compile Include="polls\__init__.py" />
   </ItemGroup>
@@ -60,8 +63,11 @@
     <Folder Include="polls\templates\polls\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="polls\templates\polls\detail.html" />
     <Content Include="polls\templates\polls\index.html" />
     <Content Include="polls\templates\polls\layout.html" />
+    <Content Include="polls\templates\polls\results.html" />
+    <Content Include="polls\templates\polls\vote.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
